@@ -1,5 +1,5 @@
 #Open Up File
-with open('day_1_input.txt') as f:
+with open('inputs/day_1_input.txt') as f:
     lines = f.readlines()
 
 #PART 1
