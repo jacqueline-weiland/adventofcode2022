@@ -3,10 +3,17 @@
 with open("inputs/day_5_input.txt") as f:
     lines = f.readlines()
 
-#PART 1
-    
+#find where "move" directions start
+z = 0
+for each in lines:
+    if re.match(r'move', each) == None:
+        z+=1
+    else:
+        break   
 #break moves directions into a list of lists
-movesList = [x.split() for x in lines[10:]]
+movesList = [x.split() for x in lines[z:]]
+
+#PART 1
 
 bigList = []
 for each in lines[:8]:
@@ -86,8 +93,6 @@ print(aStr)
 
 
 #PART 2
-#break moves directions into a list of lists
-movesList = [x.split() for x in lines[10:]]
 
 bigList = []
 for each in lines[:8]:
