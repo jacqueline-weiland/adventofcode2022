@@ -30,18 +30,22 @@ for i in range(len(aList)): #go through each row
         for m in range(j):
             if aList[i][j] <= aList[i][m]:
                 left_visible = False
+                break #breaking loop because once a tree is blocked, no need to keep looking
        #check right
         for n in range(j+1, num_columns):
             if aList[i][j] <= aList[i][n]:
                 right_visible = False
+                break
        #check up
         for o in range(i):
             if aList[i][j] <= aList[o][j]:
                 up_visible = False
+                break
         #check down
         for p in range(i+1, num_rows):
             if aList[i][j] <= aList[p][j]:
                 down_visible = False
+                break
                 
         #a long as visible in at least one direction, it's visible
         if left_visible == True or right_visible == True or up_visible == True or down_visible == True:
